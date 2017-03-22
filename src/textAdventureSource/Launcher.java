@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Launcher {
 	
+	static Profile myProfile = new Profile();
+	static MainGameLoop gameLoop = new MainGameLoop();
 	static Scanner in = new Scanner(System.in);
 
 	public static void main(String[] args) throws IOException {
@@ -34,10 +36,12 @@ public class Launcher {
 		String enter = "";
 		switch(choice){
 		case 1:
-			System.out.println("Game starting... (press enter to continue)");
+			System.out.println("Game starting...");
+			gameLoop.start(myProfile);
 			break;
 		case 2:
-			System.out.println("Editing profile... (press enter to continue)");
+			System.out.println("Editing profile:");
+			myProfile.editProfile();
 			break;
 		case 3:
 			System.out.println("Exit program");
@@ -47,7 +51,7 @@ public class Launcher {
 			System.out.println("Input not recognized");
 			break;
 		}
-		
+		System.out.println("(press enter to continue)");
 		System.in.read();
 	}
 
