@@ -2,6 +2,12 @@ package textAdventureSource;
 
 import java.util.Scanner;
 
+/**
+ * 
+ * This class contains the player's information
+ *
+ */
+
 public class Profile {
 
 	private String playerName;

@@ -2,17 +2,27 @@ package textAdventureSource;
 
 import java.util.Scanner;
 
+/**
+ * 
+ * This is the main game loop class - it handles all of the 
+ * actual game play inputs and actions. 
+ *
+ */
+
 public class MainGameLoop {
 	
 	static Scanner in = new Scanner(System.in);
 	static StringBuilder sb = new StringBuilder();
 	
+	// I use the GameMap super class so any class that extends it
+	// can be used
 	static GameMap myMap;
 	
 	public void start(Profile myProfile){
 		
 		myMap = new DungeonMap();
 		
+		// room code is the value from the 2D array map file
 		int roomCode = myMap.getStartingRoom();
 		
 		gameLoop: while(roomCode != 100){
@@ -29,6 +39,7 @@ public class MainGameLoop {
 				break;
 			}
 			
+			// clear the string builder to remove all the text
 			sb.setLength(0);
 			
 			sb.append("There are exits to the ");

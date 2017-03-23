@@ -1,5 +1,11 @@
 package textAdventureSource;
 
+/**
+ * 
+ * This is a instance of a playable map
+ *
+ */
+
 public class DungeonMap extends GameMap {
 	
 	public DungeonMap(){

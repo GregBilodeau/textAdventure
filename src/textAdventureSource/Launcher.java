@@ -3,6 +3,15 @@ package textAdventureSource;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * 
+ * This is the Launcher class - it contains the main method that gets
+ * executed when the program is run. Its function is just to present
+ * the user with a menu of options and then pass control over to the
+ * other classes that do the work.
+ *
+ */
+
 public class Launcher {
 	
 	static Profile myProfile = new Profile();
@@ -10,8 +19,6 @@ public class Launcher {
 	static Scanner in = new Scanner(System.in);
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
-		
 		int selection = 0;
 		
 		String optionList = "Select an option below:\n\t1. Start game\n\t2. Edit Profile\n\t3. Exit";
@@ -22,6 +29,7 @@ public class Launcher {
 			
 			System.out.println(optionList);
 		
+			// read in the option selected
 			selection = in.nextInt();
 			
 			processSelection(selection);
@@ -33,7 +41,7 @@ public class Launcher {
 	}
 	
 	private static void processSelection(int choice) throws IOException{
-		String enter = "";
+
 		switch(choice){
 		case 1:
 			System.out.println("Game starting...");

@@ -1,5 +1,12 @@
 package textAdventureSource;
 
+/**
+ * 
+ * This is the base class for objects in the game that
+ * the player can pick up and include in their inventory
+ *
+ */
+
 public class InventoryObject {
 	
 	private String objectName;

@@ -1,11 +1,25 @@
 package textAdventureSource;
 
+/**
+ * 
+ * This is the base class for the game maps.
+ * The basic idea is to store int values in
+ * a 2-dimensional array (an array of arrays)
+ * and use those values to describe the rooms
+ * and the array index values to track the 
+ * player movement.
+ *
+ */
+
 public class GameMap {
 
 	private int[][] mapMatrix;
 	
+	// indexes of where in the mapMatrix
+	// to start the player position
 	private int startX, startY;
 	
+	// used to track the player's current position
 	private int currentY, currentX;
 	
 	public GameMap(int startY, int startX){
@@ -18,6 +32,10 @@ public class GameMap {
 	public int getCurrentRoom(){
 		return mapMatrix[currentY][currentX];
 	}
+	
+	// the canGo methods check the values of the matrix
+	// in adjacent rooms to see if they are accessible 
+	// they also check the boundaries of the array 
 	
 	public boolean canGoNorth(){
 		if(currentY > 0 && mapMatrix[currentY - 1][currentX] != 0){
@@ -50,6 +68,9 @@ public class GameMap {
 			return false;
 		}
 	}
+	
+	// the go methods alter the current index values to 
+	// move player through the map
 	
 	public void goNorth(){
 		currentY--;
